@@ -21,10 +21,8 @@ RUN --mount=type=cache,target=/usr/local/cargo/git/db \
     --mount=type=cache,target=/usr/local/cargo/registry/cache \
     --mount=type=cache,target=/usr/local/cargo/registry/index \
     cargo build --target wasm32-wasi --release
-RUN /root/.wasmedge/bin/wasmedgec target/wasm32-wasi/release/wasm-docker-test.wasm wasm-docker-test.wasm
+RUN /root/.wasmedge/bin/wasmedgec target/wasm32-wasi/release/docker-wasm.wasm docker-wasm.wasm
 
 FROM scratch
-COPY --from=build /src/wasm-docker-test.wasm  ./
-ENTRYPOINT [ "wasm-docker-test.wasm" ]
-
-
+COPY --from=build /src/docker-wasm.wasm  ./
+ENTRYPOINT [ "docker-wasm.wasm" ]

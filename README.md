@@ -18,9 +18,9 @@
 Make sure that if you open the dockerfile, you check that it has been saved using LF (Line Feed) and not CRLF (Carriage Return Line Feed). For VSCode, this can be seen and changed through the status bar
 
 ```bash
-git clone https://github.com/cloudgenius/wasm-docker-test.git
+git clone https://github.com/cloudgenius/docker-wasm.git
 
-cd ./wasm-docker-test
+cd ./docker-wasm
 ```
 
 If using bash:
@@ -32,7 +32,7 @@ bash run.sh
 If using other:
 
 ```bash
-docker buildx build --push --platform wasi/wasm32 -t cloudgenius/wasm-docker-test .
+docker buildx build --push --platform wasi/wasm32 -t cloudgenius/docker-wasm .
 docker compose up
 ```
 
