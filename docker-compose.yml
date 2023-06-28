@@ -1,7 +1,7 @@
 version: '2.4'
 services:
   server:
-    image: nslebruh/wasm-docker-test
+    image: cloudgenius/wasm-docker-test
     platform: wasi/wasm32
     runtime: io.containerd.wasmedge.v1
     volumes:
